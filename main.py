@@ -11,7 +11,7 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/shut_down', methods=['POST'])
+@app.route('/shut_down', methods=['GET'])
 def raise_volume():
     info_messages = asyncio.run(main())
     return '<br>'.join(info_messages)

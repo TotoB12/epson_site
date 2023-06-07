@@ -27,12 +27,12 @@
             <span class="sr-only">Loading...</span>
         </div>
         <br>
-        <form action="/shut_down" method="post">
+        <form action="/shut_down" method="get">
             <br>
             <button type="submit" class="btn btn-danger btn-lg">Shut All Down</button>
         </form>
         <br>
-        <p class="text-danger mt-2" style="display: none;">This is a warning, don't do it</p>
+        <p class="text-danger mt-2" style="display: none;">Please wait up to 2 minutes. Summary will be shown here once all projectors have been shut down.</p>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -41,7 +41,6 @@
 
     <script>
         $('form').submit(function(e) {
-            e.preventDefault();
             $('.spinner-border').show();
             $('button').prop('disabled', true);
             $('p').show();
